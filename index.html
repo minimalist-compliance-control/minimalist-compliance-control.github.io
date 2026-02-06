@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for search engines -->
+  <meta name="description"
+    content="Minimalist Compliance Control enables compliant interaction using only motor current or voltage signals—no force sensors, current control, or learning—and works across diverse robots, tasks, and high-level planners.">
+  <meta name="keywords" content="Grasping and Manipulation, Control and Dynamics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minimalist Compliance Control</title>
+
+  <!-- NOTE: Remove this analytics code before deploying your own site! -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-GA-ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'YOUR-GA-ID');
+  </script>
+  -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <!-- <a class="navbar-item" href="https://your-homepage.com">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a> -->
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More ToddlerBot Projects
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://toddlerbot.github.io/">
+              ToddlerBot
+            </a>
+            <a class="navbar-item" href="https://robot-trains-robot.github.io/">
+              Robot Trains Robot
+            </a>
+            <a class="navbar-item" href="https://locomotion-beyond-feet.github.io/">
+              Locomotion Beyond Feet
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Minimalist Compliance Control</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://hshi74.github.io/">Haochen Shi</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://hsb0508.github.io/">Songbo Hu</a><sup>*</sup>,</span>
+              <span class="author-block">
+                <a href="https://yifan-hou.github.io/">Yifan Hou</a>,</span>
+              <span class="author-block">
+                <a href="http://me.weizhuowang.com/">Weizhuo Wang</a>,</span>
+              <span class="author-block">
+                <a href="https://tml.stanford.edu/people/karen-liu">C. Karen Liu</a><sup>†</sup>,</span>
+              <span class="author-block">
+                <a href="https://shurans.github.io/">Shuran Song</a><sup>†</sup></span>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Stanford University</span>
+            </div>
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>*</sup>Equal contribution,</span>
+              <span class="author-block"><sup>†</sup>Equal advising</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2601.03607" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <!-- <span class="link-block">
+                  <a href="https://arxiv.org/abs/2601.03607" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span> -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/hshi74/toddlerbot"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Keyframe App Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://github.com/Stanford-TML/robot_keyframe_kit"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Keyframe App</span>
+                  </a>
+                </span> -->
+                <!-- Tweet Link. -->
+                <span class="link-block">
+                  <a href="https://x.com/taeyang___11/status/2009359173302276391?s=20"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fa-brands fa-x-twitter"></i>
+                    </span>
+                    <span>Tweet</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <div class="video-placeholder" style="height: 200px;">Video 1</div>
+        </div>
+        <div class="item item-video2">
+          <div class="video-placeholder" style="height: 200px;">Video 2</div>
+        </div>
+        <div class="item item-video3">
+          <div class="video-placeholder" style="height: 200px;">Video 3</div>
+        </div>
+        <div class="item item-video4">
+          <div class="video-placeholder" style="height: 200px;">Video 4</div>
+        </div>
+        <div class="item item-video5">
+          <div class="video-placeholder" style="height: 200px;">Video 5</div>
+        </div>
+        <div class="item item-video6">
+          <div class="video-placeholder" style="height: 200px;">Video 6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+
+  <section class="section teaser-section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths has-text-centered">
+          <div class="publication-video">
+            <video id="wall-stairs-chair-box" playsinline autoplay muted loop controls>
+              <source src="./static/videos/teaser_release.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-four-fifths ">
+          <img src="./static/images/teaser.png"
+            alt="Teaser image showing the robot performing nine distinct locomotion skills including getting down, crawling, climbing walls, platforms, and stairs."
+            style="max-width: 100%;">
+          <p>
+            <span class="dnerf">Minimalist Compliance Control</span> (A) requires no force sensors or learning,
+            estimating external wrenches directly from motor current or voltage signals
+            using a motor torque model and Jacobians. These estimates drive a spring--mass--damper model to update
+            task-space position references. (B) This minimalist approach generalizes across embodiment, from robot arm
+            and dexterous hand to humanoid robot, and (C) remains plug-and-play with any policy such as VLM-based
+            policy, imitation policy, and model-based policy, and across diverse tasks such as wiping, drawing,
+            scooping, and in-hand manipulation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Abstract. -->
+      <!-- <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Compliance control is essential for safe physical interaction, yet its adoption is limited by hardware
+              requirements such as force/torque sensors. While recent reinforcement learning approaches aim to bypass
+              these constraints, they often suffer from sim-to-real gaps, lack safety guarantees, and add system
+              complexity. We propose <span class="dnerf">Minimalist Compliance Control</span>, which enables compliant
+              behavior using only motor
+              current or voltage signals readily available in modern servos and quasi-direct-drive motors—without force
+              sensors, current control, or learning. External wrenches are estimated from actuator signals and Jacobians
+              and incorporated into a task-space admittance controller, preserving sufficient force measurement accuracy
+              for stable and responsive compliance control. Our method is embodiment-agnostic and plug-and-play with
+              diverse high-level planners. We validate our approach on a robot arm, a dexterous hand, and a humanoid
+              robot across multiple contact-rich tasks, using vision-language models, imitation learning, and
+              model-based planning. The results demonstrate robust, safe, and compliant interaction across embodiments
+              and planning paradigms.
+            </p>
+          </div>
+        </div>
+      </div> -->
+      <!--/ Abstract. -->
+
+      <!-- Paper video. -->
+      <!-- <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Video</h2>
+          <div class="publication-video">
+            <div class="video-placeholder" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+              YouTube Video Embed<br>
+              Replace with iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            </div>
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&amp;showinfo=0" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div> -->
+      <!--/ Paper video. -->
+
+
+      <div class="columns is-centered">
+        <div class="column is-four-fifths has-text-centered">
+          <h2 class="title is-3">VLM-based Policy for Drawing and Wiping</h2>
+          <div class="columns is-multiline is-centered">
+            <div class="column is-half-tablet is-full-mobile">
+              <div class="publication-video">
+                <video id="stairs-wall-box-chair" playsinline controls>
+                  <source src="./static/videos/toddy_draw_wipe_release.mp4" type="video/mp4">
+                </video>
+              </div>
+              <b>Our method for drawing and wiping a star</b>
+            </div>
+            <div class="column is-half-tablet is-full-mobile">
+              <div class="publication-video">
+                <video id="box-chair-stairs-wall" playsinline controls>
+                  <source src="./static/videos/toddy_draw_position_4x_release.mp4" type="video/mp4">
+                </video>
+              </div>
+              <b>Position control baseline with no contact</b>
+            </div>
+            <div class="column is-half-tablet is-full-mobile">
+              <div class="publication-video">
+                <video id="chair-wall-box-stairs" playsinline controls>
+                  <source src="./static/videos/toddy_draw_too_much_4x_release.mp4" type="video/mp4">
+                </video>
+              </div>
+              <b>Position control drawing baseline with excessive contact force</b>
+            </div>
+            <div class="column is-half-tablet is-full-mobile">
+              <div class="publication-video">
+                <video id="stairs-box-wall-chair-chair" playsinline controls>
+                  <source src="./static/videos/toddy_wipe_too_much_4x_release.mp4" type="video/mp4">
+                </video>
+              </div>
+              <b>Position control wiping baseline with excessive contact force</b>
+            </div>
+          </div>
+          <p class="has-text-justified">
+            Given a text prompt (e.g., ``star'') and an initial stereo observation of the whiteboard, we use vision
+            foundation models and VLMs to predict a 3D contact trajectory.
+            Our controller maintains appropriate contact forces and stable interaction, whereas the position-control
+            baseline frequently loses contact, applies insufficient force, or exerts excessive force, leading to task
+            failure. Insufficient force typically fails to establish or maintain contact, while excessive force
+            increases tangential friction and leads to larger tangential tracking errors.
+          </p>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-four-fifths ">
+          <h2 class="title is-3 has-text-centered">VLM-based Policy with Locomotion to Wipe a Vase</h2>
+          <div class="publication-video">
+            <video id="cart" playsinline controls>
+              <source src="./static/videos/toddy_vase_release.mp4" type="video/mp4">
+            </video>
+          </div>
+          <!-- <b>
+            Our method can also be integrated with a locomotion policy to wipe a vase.
+          </b> -->
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-four-fifths ">
+          <h2 class="title is-3 has-text-centered">Imitation Policy for Placing the Egg</h2>
+          <div class="publication-video">
+            <video id="cart" playsinline controls>
+              <source src="./static/videos/toddy_cook_release.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p>
+            We train diffusion policies with 200 demonstrations with either our method or position
+            control as the low-level controller. Our method achieves a success rate of 80%, compared to 40% for the
+            position-control baseline.
+            The baseline often fails to stabilize the bread as a stopper or applies excessive force with the spatula,
+            leading to poor tangential tracking.
+          </p>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-four-fifths has-text-centered">
+          <h2 class="title is-3">Model-based Policy for Rotating the Ball</h2>
+          <div class="columns is-multiline is-centered">
+            <div class="column is-half-tablet is-full-mobile">
+              <div class="publication-video">
+                <video id="stairs-wall-box-chair" playsinline controls>
+                  <source src="./static/videos/toddy_ball_rotate_x_release.mp4" type="video/mp4">
+                </video>
+              </div>
+              <b>Rotate with a single hand along the x-axis</b>
+            </div>
+            <div class="column is-half-tablet is-full-mobile">
+              <div class="publication-video">
+                <video id="box-chair-stairs-wall" playsinline controls>
+                  <source src="./static/videos/toddy_ball_rotate_z_release.mp4" type="video/mp4">
+                </video>
+              </div>
+              <b>Rotate with two hands along the z-axis</b>
+            </div>
+          </div>
+          <p class="has-text-justified">
+            When contact location is known, a robust compliance profile can be computed in closed-form using
+            optimally-conditioned hybrid servoing (OCHS).
+            In the ball rotation task, our method achieves an average rotation of 21°, while the baseline either
+            slips or rotates the ball by only 2°-3°.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-four-fifths has-text-centered">
+          <h2 class="title is-3">VLM-based Policy for <i>Finger</i> Drawing and Wiping</h2>
+          <div class="publication-video">
+            <video id="cart" playsinline controls>
+              <source src="./static/videos/leap_draw_and_wipe_release.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p style="margin-bottom: 1em;">
+            We further evaluate on the LEAP Hand to show its effectiveness in dexterous manipulation.
+          </p>
+          <div class="columns is-multiline is-centered">
+            <div class="column is-half-tablet is-full-mobile">
+              <div class="publication-video">
+                <video id="stairs-wall-box-chair" playsinline controls>
+                  <source src="./static/videos/leap_draw_too_little_4x_release.mp4" type="video/mp4">
+                </video>
+              </div>
+              <b>Position control drawing with insufficient force</b>
+            </div>
+            <div class="column is-half-tablet is-full-mobile">
+              <div class="publication-video">
+                <video id="box-chair-stairs-wall" playsinline controls>
+                  <source src="./static/videos/leap_wipe_too_little_8x_release.mp4" type="video/mp4">
+                </video>
+              </div>
+              <b>Position control wiping with insufficient force</b>
+            </div>
+            <div class="column is-half-tablet is-full-mobile">
+              <div class="publication-video">
+                <video id="chair-wall-box-stairs" playsinline controls>
+                  <source src="./static/videos/leap_draw_too_much_4x_release.mp4" type="video/mp4">
+                </video>
+              </div>
+              <b>Position control drawing with excessive force</b>
+            </div>
+            <div class="column is-half-tablet is-full-mobile">
+              <div class="publication-video">
+                <video id="stairs-box-wall-chair-chair" playsinline controls>
+                  <source src="./static/videos/leap_wipe_too_much_8x_release.mp4" type="video/mp4">
+                </video>
+              </div>
+              <b>Position control wiping with excessive force</b>
+            </div>
+          </div>
+          <p class="has-text-justified">
+            Given the prompt ``Letter O and Letter K,'' a VLM-based policy predicts the 3D trajectory, which the
+            compliance controller executes reliably. In contrast, the position-control baseline either fails to
+            establish contact or tracks poorly due to excessive force.
+          </p>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-four-fifths ">
+          <h2 class="title is-3 has-text-centered">Model-based Policy for In-hand Reorientation</h2>
+          <div class="publication-video">
+            <video id="cart" playsinline controls>
+              <source src="./static/videos/leap_rotate_4x_release.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="has-text-justified">
+            For in-hand reorientation, we command target linear or angular velocities and execute a predefined sequence
+            of commands. Our method achieves an average translation of 3.6 cm and a rotation of 27°, and can sustain
+            reorientation for more than three cycles of translation and rotation commands. In contrast, the
+            position-control baseline typically drops the object within the first few commands.
+          </p>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-four-fifths has-text-centered">
+          <h2 class="title is-3">Compliance Controller Analysis</h2>
+          <div class="columns is-multiline is-centered">
+            <div class="column is-half-tablet is-full-mobile">
+              <div class="publication-video">
+                <video id="stairs-wall-box-chair" playsinline controls>
+                  <source src="./static/videos/ati_test_release.mp4" type="video/mp4">
+                </video>
+              </div>
+              <b>Estimated external wrench vs. ATI mini 45 force/torque sensor readings</b>
+            </div>
+            <div class="column is-half-tablet is-full-mobile">
+              <div class="publication-video">
+                <video id="chair-wall-box-stairs" playsinline controls>
+                  <source src="./static/videos/additional_release.mp4" type="video/mp4">
+                </video>
+              </div>
+              <b>Our controller reacts to whole-body contacts, including elbows, shoulders, torso, and so on</b>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-four-fifths ">
+          <h2 class="title is-3 has-text-centered">Comparison with RL Baselines</h2>
+          <div class="publication-video">
+            <video id="cart" playsinline controls>
+              <source src="./static/videos/rl_baseline_release.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p>
+            To evaluate our compliance controller against learning-based methods, we compare against two RL-based
+            baselines, <a href="https://unified-force.github.io/">UniFP</a> and <a
+              href="https://facet.pages.dev/">FACET</a>.
+            In the evaluation, the heart-shaped target trajectory is
+            generated by the VLM-based policy and executed by all methods. UniFP and FACET struggle to track the
+            position accurately while maintaining appropriate contact force with the whiteboard. The external wrench
+            estimation in our method is also crucial for regulating contact force.
+          </p>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title has-text-centered">BibTeX</h2>
+          <pre><code>@misc{yang2026locomotion,
+  title = {Locomotion {{Beyond Feet}}},
+  author = {Yang, Tae Hoon and Shi, Haochen and Hu, Jiacheng and Zhang, Zhicong and Jiang, Daniel and Wang, Weizhuo and He, Yao and Wu, Zhen and Chen, Yuming and Hou, Yifan and Kennedy, Monroe and Song, Shuran and Liu, C. Karen},
+  year = 2026,
+  month = jan,
+  number = {arXiv:2601.03607},
+  eprint = {2601.03607},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2601.03607},
+  urldate = {2026-01-08},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Robotics}
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Acknowledgment</h2>
+          <div class="content has-text-justified" style="margin-top: 1rem;">
+            <p>
+              The authors would like to express their great gratitude to the Toddy Team for hardware support and the
+              members of Stanford TML and REALab for helpful discussions.
+              This work was supported in part by the NSF Award #2143601, #2037101, #2132519, #2153854, Sloan
+              Fellowship, and Stanford Institute for Human-Centered AI.
+              The views and conclusions contained herein are those of the authors and should not be interpreted as
+              necessarily representing the official policies, either expressed or implied, of the sponsors.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- <section class="section" id="BibTeX">
+    
+  </section> -->
+
+
+  <footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <!-- <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
+                code</a> of this website,
+              we just ask that you link back to this page in the footer.
+              Please remember to remove the analytics code included in the header of the website which
+              you do not want on your website.
+            </p>
+          </div> -->
+          <p>
+            Website template by <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+  </footer>
+
+</body>
+
+</html>
